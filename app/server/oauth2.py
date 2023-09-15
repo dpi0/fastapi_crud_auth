@@ -5,10 +5,17 @@ from fastapi.security import OAuth2PasswordBearer
 from .models import TokenData
 from .database import users_coll
 from typing import Optional
+
 from dotenv import dotenv_values
+
+# from .config import settings
 
 env_config = dotenv_values(".env")
 
+
+# SECRET_KEY = settings.SECRET_KEY
+# ALGORITHM = settings.ALGORITHM
+# ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 SECRET_KEY = f"{env_config['SECRET_KEY']}"
 ALGORITHM = f"{env_config['ALGORITHM']}"
